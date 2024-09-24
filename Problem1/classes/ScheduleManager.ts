@@ -38,6 +38,10 @@ export class ScheduleManager {
             .join('\n');
     }
 
+    getTasks(): Task[] {
+        return this.tasks;
+    }
+
     private validateTask(newTask: Task): boolean {
         for (let task of this.tasks) {
             if (this.isOverlapping(task, newTask)) {

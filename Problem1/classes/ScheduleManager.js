@@ -31,6 +31,9 @@ export class ScheduleManager {
             .map(t => `${t.startTime} - ${t.endTime}: ${t.description} [${t.priority}]`)
             .join('\n');
     }
+    getTasks() {
+        return this.tasks;
+    }
     validateTask(newTask) {
         for (let task of this.tasks) {
             if (this.isOverlapping(task, newTask)) {
